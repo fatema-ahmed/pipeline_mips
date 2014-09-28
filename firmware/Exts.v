@@ -1,0 +1,122 @@
+module JText(JT,JT_32);
+  input [25:0]JT;
+  output reg [31:0]JT_32;
+  always@(*)
+  begin
+    JT_32[0]<=1'b0;
+    JT_32[1]<=1'b0;
+    JT_32[2]<=JT[0];
+    JT_32[3]<=JT[1];
+    JT_32[4]<=JT[2];
+    JT_32[5]<=JT[3];
+    JT_32[6]<=JT[4];
+    JT_32[7]<=JT[5];
+    JT_32[8]<=JT[6];
+    JT_32[9]<=JT[7];
+    JT_32[10]<=JT[8];
+    JT_32[11]<=JT[9];
+    JT_32[12]<=JT[10];
+    JT_32[13]<=JT[11];
+    JT_32[14]<=JT[12];
+    JT_32[15]<=JT[13];
+    JT_32[16]<=JT[14];
+    JT_32[17]<=JT[15];
+    JT_32[18]<=JT[16];
+    JT_32[19]<=JT[17];
+    JT_32[20]<=JT[18];
+    JT_32[21]<=JT[19];
+    JT_32[22]<=JT[20];
+    JT_32[23]<=JT[21];
+    JT_32[24]<=JT[22];
+    JT_32[25]<=JT[23];
+    JT_32[26]<=JT[24];
+    JT_32[27]<=JT[25];
+    JT_32[28]<=1'b0;
+    JT_32[29]<=1'b0;
+    JT_32[30]<=1'b0;
+    JT_32[31]<=1'b1;
+  end
+endmodule
+
+module EXT_16_32(inp,Sig,outp);
+  input [15:0]inp;
+  input Sig;
+  output[31:0]outp;
+  MuxTwo u1(outp[16],1'b0,inp[15],Sig);   
+  MuxTwo u2(outp[31],1'b0,inp[15],Sig);
+  MuxTwo u3(outp[30],1'b0,inp[15],Sig);
+  MuxTwo u4(outp[29],1'b0,inp[15],Sig);
+  MuxTwo u5(outp[28],1'b0,inp[15],Sig);
+  MuxTwo u6(outp[27],1'b0,inp[15],Sig);
+  MuxTwo u7(outp[26],1'b0,inp[15],Sig);
+  MuxTwo u8(outp[25],1'b0,inp[15],Sig);
+  MuxTwo u9(outp[24],1'b0,inp[15],Sig);
+  MuxTwo u10(outp[23],1'b0,inp[15],Sig);
+  MuxTwo u11(outp[22],1'b0,inp[15],Sig);
+  MuxTwo u12(outp[21],1'b0,inp[15],Sig);
+  MuxTwo u13(outp[20],1'b0,inp[15],Sig);
+  MuxTwo u14(outp[19],1'b0,inp[15],Sig);
+  MuxTwo u15(outp[18],1'b0,inp[15],Sig);
+  MuxTwo u16(outp[17],1'b0,inp[15],Sig);
+  MuxTwo a2(outp[14],inp[14],inp[14],Sig);
+  MuxTwo a3(outp[13],inp[13],inp[13],Sig);
+  MuxTwo a4(outp[12],inp[12],inp[12],Sig);
+  MuxTwo a5(outp[11],inp[11],inp[11],Sig);
+  MuxTwo a6(outp[10],inp[10],inp[10],Sig);
+  MuxTwo a7(outp[9],inp[9],inp[9],Sig);
+  MuxTwo a8(outp[8],inp[8],inp[8],Sig);
+  MuxTwo a9(outp[7],inp[7],inp[7],Sig);
+  MuxTwo a10(outp[6],inp[6],inp[6],Sig);
+  MuxTwo a11(outp[5],inp[5],inp[5],Sig);
+  MuxTwo a12(outp[4],inp[4],inp[4],Sig);
+  MuxTwo a13(outp[3],inp[3],inp[3],Sig);
+  MuxTwo a14(outp[2],inp[2],inp[2],Sig);
+  MuxTwo a15(outp[1],inp[1],inp[1],Sig);
+  MuxTwo a16(outp[0],inp[0],inp[0],Sig);
+  MuxTwo a1(outp[15],inp[15],inp[15],Sig);
+endmodule
+
+module EXT_5_32(inp,Sig,outp);
+  input [4:0]inp;
+  input Sig;
+  output[31:0]outp;
+  MuxTwo u1(outp[16],1'b0,inp[4],Sig);
+  MuxTwo u2(outp[31],1'b0,inp[4],Sig);
+  MuxTwo u3(outp[30],1'b0,inp[4],Sig);
+  MuxTwo u4(outp[29],1'b0,inp[4],Sig);
+  MuxTwo u5(outp[28],1'b0,inp[4],Sig);
+  MuxTwo u6(outp[27],1'b0,inp[4],Sig);
+  MuxTwo u7(outp[26],1'b0,inp[4],Sig);
+  MuxTwo u8(outp[25],1'b0,inp[4],Sig);
+  MuxTwo u9(outp[24],1'b0,inp[4],Sig);
+  MuxTwo u10(outp[23],1'b0,inp[4],Sig);
+  MuxTwo u11(outp[22],1'b0,inp[4],Sig);
+  MuxTwo u12(outp[21],1'b0,inp[4],Sig);
+  MuxTwo u13(outp[20],1'b0,inp[4],Sig);
+  MuxTwo u14(outp[19],1'b0,inp[4],Sig);
+  MuxTwo u15(outp[18],1'b0,inp[4],Sig);
+  MuxTwo u16(outp[17],1'b0,inp[4],Sig);
+  MuxTwo a2(outp[14],1'b0,inp[4],Sig);
+  MuxTwo a3(outp[13],1'b0,inp[4],Sig);
+  MuxTwo a4(outp[12],1'b0,inp[4],Sig);
+  MuxTwo a5(outp[11],1'b0,inp[4],Sig);
+  MuxTwo a6(outp[10],1'b0,inp[4],Sig);
+  MuxTwo a7(outp[9],1'b0,inp[4],Sig);
+  MuxTwo a8(outp[8],1'b0,inp[4],Sig);
+  MuxTwo a9(outp[7],1'b0,inp[4],Sig);
+  MuxTwo a10(outp[6],1'b0,inp[4],Sig);
+  MuxTwo a11(outp[5],1'b0,inp[4],Sig);
+  MuxTwo a12(outp[4],inp[4],inp[4],Sig);
+  MuxTwo a13(outp[3],inp[3],inp[3],Sig);
+  MuxTwo a14(outp[2],inp[2],inp[2],Sig);
+  MuxTwo a15(outp[1],inp[1],inp[1],Sig);
+  MuxTwo a16(outp[0],inp[0],inp[0],Sig);
+  MuxTwo a1(outp[15],1'b0,inp[4],Sig);
+endmodule
+
+
+module LastNumber(inp,outp);
+  input [31:0]inp;
+  output outp;
+  MuxTwo u1(outp,inp[0],inp[0],1'b1);
+endmodule
